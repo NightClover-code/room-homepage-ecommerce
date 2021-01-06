@@ -17,6 +17,7 @@
 .app__container .wrapper {
   width: 100%;
   min-width: 280px;
+  max-width: 1800px;
   margin: auto;
 }
 /*# sourceMappingURL=app.css.map */

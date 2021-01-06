@@ -10,6 +10,8 @@ import {
   TitleTop,
   DescriptionTop,
   Image,
+  ShopNow,
+  IconArrow,
 } from './StyledElements/TopGridElements';
 import {
   AboutDark,
@@ -19,6 +21,7 @@ import {
   DescriptionBottom,
   ImageDark,
   ImageLight,
+  AboutContentContainer,
 } from './StyledElements/BottomGridElements';
 const MainGrid = () => {
   return (
@@ -30,22 +33,27 @@ const MainGrid = () => {
         <TextContent>
           <TitleTop>{data[0].title}</TitleTop>
           <DescriptionTop>{data[0].description}</DescriptionTop>
+          <ShopNow>
+            Shop now <IconArrow src="./images/icon-arrow.svg" />
+          </ShopNow>
         </TextContent>
       </TextContentContainer>
       <AboutDark>
         <ImageDark src="./images/image-about-dark.jpg" alt="dark-about-image" />
       </AboutDark>
-      <AboutContent>
-        <TitleBottom>About our furniture</TitleBottom>
-        <DescriptionBottom>
-          Our multifunctional collection blends design and function to suit your
-          individual taste. Make each room unique, or pick a cohesive theme that
-          best express your interests and what inspires you. Find the furniture
-          pieces you need, from traditional to contemporary styles or anything
-          in between. Product specialists are available to help you create your
-          dream space.
-        </DescriptionBottom>
-      </AboutContent>
+      <AboutContentContainer>
+        <AboutContent>
+          <TitleBottom>About our furniture</TitleBottom>
+          <DescriptionBottom>
+            Our multifunctional collection blends design and function to suit
+            your individual taste. Make each room unique, or pick a cohesive
+            theme that best express your interests and what inspires you. Find
+            the furniture pieces you need, from traditional to contemporary
+            styles or anything in between. Product specialists are available to
+            help you create your dream space.
+          </DescriptionBottom>
+        </AboutContent>
+      </AboutContentContainer>
       <AboutLight>
         <ImageLight
           src="./images/image-about-light.jpg"
