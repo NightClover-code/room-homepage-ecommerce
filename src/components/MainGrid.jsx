@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 //importing data
 import data from '../util';
 //importing styled elements
@@ -29,23 +29,32 @@ import {
   AboutContentContainer,
 } from './StyledElements/BottomGridElements';
 const MainGrid = () => {
+  //state
+  const [counter, setCounter] = useState(0);
+  //functions
+  const onSliderRightHandler = () => {
+    counter < 2 ? setCounter(counter + 1) : setCounter(0);
+  };
+  const onSliderLeftHandler = () => {
+    counter > 0 ? setCounter(counter - 1) : setCounter(2);
+  };
   return (
     <GridContainer>
       <HeroSection>
-        <Image src="./images/desktop-image-hero-1.jpg" alt="" />
+        <Image src={data[counter].source} alt="" />
       </HeroSection>
       <TextContentContainer>
         <TextContent>
-          <TitleTop>{data[0].title}</TitleTop>
-          <DescriptionTop>{data[0].description}</DescriptionTop>
+          <TitleTop>{data[counter].title}</TitleTop>
+          <DescriptionTop>{data[counter].description}</DescriptionTop>
           <ShopNow>
             Shop now <IconArrow src="./images/icon-arrow.svg" />
           </ShopNow>
           <Slider>
-            <SliderLeft>
+            <SliderLeft onClick={onSliderLeftHandler}>
               <IconAngleLeft src="./images/icon-angle-left.svg" />
             </SliderLeft>
-            <SliderRight>
+            <SliderRight onClick={onSliderRightHandler}>
               <IconAngleRight src="./images/icon-angle-right.svg" />
             </SliderRight>
           </Slider>
