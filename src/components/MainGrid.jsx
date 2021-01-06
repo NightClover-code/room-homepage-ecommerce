@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 //importing data
 import data from '../util';
+//importing gsap library
+import { gsap } from 'gsap';
 //importing styled elements
 import { GridContainer } from './StyledElements/MainGridElements';
 import {
@@ -28,9 +30,49 @@ import {
   ImageLight,
   AboutContentContainer,
 } from './StyledElements/BottomGridElements';
+//importing components
+import NavBar from './NavBar';
 const MainGrid = () => {
+  //refs
+  const heroSectionRef = useRef(null);
+  const textContentRef = useRef(null);
   //state
   const [counter, setCounter] = useState(0);
+  // using gsap
+  const tl = gsap.timeline({ defaults: { ease: 'power3.easeOut' } });
+  useEffect(() => {
+    tl.to('.text__content', {
+      y: '0%',
+      duration: 0.75,
+      opacity: 1,
+    });
+    tl.to('.hero__section', {
+      x: '50%',
+      duration: 0.75,
+      opacity: 1,
+    });
+    tl.to('.about__light', {
+      y: '0%',
+      duration: 0.75,
+      opacity: 1,
+    });
+    tl.to('.about__content', {
+      y: '0%',
+      duration: 0.75,
+      opacity: 1,
+    });
+    tl.to('.about__dark', {
+      y: '0%',
+      duration: 0.75,
+      opacity: 1,
+    });
+    tl.to('.text__content__container', {
+      y: '0%',
+      duration: 0.75,
+      opacity: 1,
+    });
+  }, [tl]);
+
   //functions
   const onSliderRightHandler = () => {
     counter < 2 ? setCounter(counter + 1) : setCounter(0);
@@ -39,32 +81,33 @@ const MainGrid = () => {
     counter > 0 ? setCounter(counter - 1) : setCounter(2);
   };
   return (
-    <GridContainer>
-      <HeroSection>
+    <GridContainer className="grid">
+      <HeroSection className="hero__section" ref={heroSectionRef}>
+        <NavBar />
         <Image src={data[counter].source} alt="" />
       </HeroSection>
-      <TextContentContainer>
-        <TextContent>
+      <TextContentContainer className="text__content__container">
+        <TextContent className="text__content" ref={textContentRef}>
           <TitleTop>{data[counter].title}</TitleTop>
           <DescriptionTop>{data[counter].description}</DescriptionTop>
           <ShopNow>
             Shop now <IconArrow src="./images/icon-arrow.svg" />
           </ShopNow>
-          <Slider>
-            <SliderLeft onClick={onSliderLeftHandler}>
-              <IconAngleLeft src="./images/icon-angle-left.svg" />
-            </SliderLeft>
-            <SliderRight onClick={onSliderRightHandler}>
-              <IconAngleRight src="./images/icon-angle-right.svg" />
-            </SliderRight>
-          </Slider>
         </TextContent>
+        <Slider>
+          <SliderLeft onClick={onSliderLeftHandler}>
+            <IconAngleLeft src="./images/icon-angle-left.svg" />
+          </SliderLeft>
+          <SliderRight onClick={onSliderRightHandler}>
+            <IconAngleRight src="./images/icon-angle-right.svg" />
+          </SliderRight>
+        </Slider>
       </TextContentContainer>
-      <AboutDark>
+      <AboutDark className="about__dark">
         <ImageDark src="./images/image-about-dark.jpg" alt="dark-about-image" />
       </AboutDark>
       <AboutContentContainer>
-        <AboutContent>
+        <AboutContent className="about__content">
           <TitleBottom>About our furniture</TitleBottom>
           <DescriptionBottom>
             Our multifunctional collection blends design and function to suit
@@ -76,7 +119,7 @@ const MainGrid = () => {
           </DescriptionBottom>
         </AboutContent>
       </AboutContentContainer>
-      <AboutLight>
+      <AboutLight className="about__light">
         <ImageLight
           src="./images/image-about-light.jpg"
           alt="light-about-image"
