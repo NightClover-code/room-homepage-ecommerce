@@ -6,6 +6,7 @@ export const HeroSection = styled.div`
   grid-area: hero;
 `;
 export const TextContentContainer = styled.div`
+  position: relative;
   grid-area: content;
   display: flex;
   justify-content: center;
@@ -43,3 +44,36 @@ export const ShopNow = styled.span`
   }
 `;
 export const IconArrow = styled.img``;
+export const Slider = styled.div`
+  display: flex;
+  background-color: ${colors.black};
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 33.5%;
+  height: 15%;
+`;
+export const SliderLeft = styled.div`
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  width: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: ${colors.very_dark_gray};
+  }
+`;
+export const SliderRight = styled.div`
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  width: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: ${colors.very_dark_gray};
+  }
+`;
+export const IconAngleLeft = styled.img``;
+export const IconAngleRight = styled.img``;

@@ -12,6 +12,11 @@ import {
   Image,
   ShopNow,
   IconArrow,
+  Slider,
+  SliderLeft,
+  SliderRight,
+  IconAngleLeft,
+  IconAngleRight,
 } from './StyledElements/TopGridElements';
 import {
   AboutDark,
@@ -36,6 +41,14 @@ const MainGrid = () => {
           <ShopNow>
             Shop now <IconArrow src="./images/icon-arrow.svg" />
           </ShopNow>
+          <Slider>
+            <SliderLeft>
+              <IconAngleLeft src="./images/icon-angle-left.svg" />
+            </SliderLeft>
+            <SliderRight>
+              <IconAngleRight src="./images/icon-angle-right.svg" />
+            </SliderRight>
+          </Slider>
         </TextContent>
       </TextContentContainer>
       <AboutDark>
