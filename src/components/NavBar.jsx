@@ -13,26 +13,29 @@ import {
   NavCloseLogo,
 } from './StyledElements/NavBarElements';
 const NavBar = ({ isClosed, setIsClosed }) => {
+  //user clicks on menu icon
   const onMenuHandler = () => {
     setIsClosed(false);
   };
+  //user clicks on closed icon
   const onCloseHandler = () => {
     setIsClosed(true);
   };
   return (
     <NavBarContainer>
       <NavMenu onClick={onMenuHandler}>
-        <NavMenuLogo src="./images/icon-hamburger.svg" />
+        <NavMenuLogo src="./images/icon-hamburger.svg" alt="hamburger-icon" />
       </NavMenu>
       <NavLogoContainer>
-        <NavLogo src="./images/logo.svg" />
+        <NavLogo src="./images/logo.svg" alt="logo" />
       </NavLogoContainer>
       <NavListContainer className={`${isClosed === false ? 'translate' : ''}`}>
         <NavClose
           onClick={onCloseHandler}
+          //showing / hiding the closed icon based on isClosed state
           className={`${isClosed === false ? 'show__close' : ''}`}
         >
-          <NavCloseLogo src="./images/icon-close.svg " />
+          <NavCloseLogo src="./images/icon-close.svg " alt="close-icon" />
         </NavClose>
         <NavList>
           <ListItem>home</ListItem>
