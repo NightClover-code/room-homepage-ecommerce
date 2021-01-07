@@ -58,7 +58,7 @@ export const NavList = styled.ul`
 export const ListItem = styled.li`
   position: relative;
   list-style: none;
-  padding: 0 20px;
+  padding: 5px 20px;
   font-size: 15px;
   color: ${colors.white};
   cursor: pointer;
@@ -71,7 +71,7 @@ export const ListItem = styled.li`
     height: 2px;
     background-color: ${colors.white};
     transition: all 0.25s;
-    width: 80%;
+    width: 75%;
   }
   &:hover {
     &::after {
