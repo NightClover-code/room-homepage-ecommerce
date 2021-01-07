@@ -32,7 +32,7 @@ import {
 } from './StyledElements/BottomGridElements';
 //importing components
 import NavBar from './NavBar';
-const MainGrid = () => {
+const MainGrid = ({ isClosed, setIsClosed }) => {
   //refs
   const heroSectionRef = useRef(null);
   const textContentRef = useRef(null);
@@ -51,12 +51,7 @@ const MainGrid = () => {
       duration: 0.75,
       opacity: 1,
     });
-    tl.to('.about__light', {
-      y: '0%',
-      duration: 0.75,
-      opacity: 1,
-    });
-    tl.to('.about__content', {
+    tl.to('.text__content__container', {
       y: '0%',
       duration: 0.75,
       opacity: 1,
@@ -66,7 +61,12 @@ const MainGrid = () => {
       duration: 0.75,
       opacity: 1,
     });
-    tl.to('.text__content__container', {
+    tl.to('.about__content', {
+      y: '0%',
+      duration: 0.75,
+      opacity: 1,
+    });
+    tl.to('.about__light', {
       y: '0%',
       duration: 0.75,
       opacity: 1,
@@ -83,7 +83,7 @@ const MainGrid = () => {
   return (
     <GridContainer className="grid">
       <HeroSection className="hero__section" ref={heroSectionRef}>
-        <NavBar />
+        <NavBar isClosed={isClosed} setIsClosed={setIsClosed} />
         <Image src={data[counter].source} alt="" />
       </HeroSection>
       <TextContentContainer className="text__content__container">
