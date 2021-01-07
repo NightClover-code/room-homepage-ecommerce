@@ -7,11 +7,17 @@
 }
 
 .app__container {
-  min-height: 100vh;
+  height: 100vh;
   overflow: hidden;
   margin: auto;
   font-size: 12px;
   font-family: 'Spartan', sans-serif;
+}
+
+@media screen and (max-width: 900px) {
+  .app__container {
+    height: auto;
+  }
 }
 
 .app__container .wrapper {
