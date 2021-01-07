@@ -47,7 +47,7 @@ const MainGrid = ({ isClosed, setIsClosed }) => {
       opacity: 1,
     });
     tl.to('.hero__section', {
-      x: '50%',
+      x: '0%',
       duration: 0.75,
       opacity: 1,
     });

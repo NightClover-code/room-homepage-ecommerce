@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap');
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .app__container {
@@ -17,13 +17,13 @@
 .app__container .wrapper {
   width: 100%;
   min-width: 280px;
-  max-width: 1800px;
+  max-width: 2000px;
   margin: auto;
 }
 
 .translate {
   -webkit-transform: translateY(0%) !important;
-          transform: translateY(0%) !important;
+  transform: translateY(0%) !important;
 }
 
 .overlay {

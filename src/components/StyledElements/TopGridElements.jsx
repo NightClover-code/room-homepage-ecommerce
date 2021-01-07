@@ -5,9 +5,7 @@ import colors from '../Colors';
 export const HeroSection = styled.div`
   position: relative;
   grid-area: hero;
-  transform: translateX(-50%);
   opacity: 0;
-  animation-duration: 0.7s;
 `;
 export const TextContentContainer = styled.div`
   position: relative;
